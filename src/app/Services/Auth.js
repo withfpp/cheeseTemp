@@ -1,4 +1,4 @@
-angular.module('cheeseService', [])
+angular.module('cheeseService')
 	.service('Auth', Auth);
 
 function Auth($q, $state){
@@ -29,16 +29,10 @@ function Auth($q, $state){
 		return deferred.promise;
 	}
 
-	function Logout(){
-		// CurrentUser.userId = null;
-		// localStorage["firebase:session::cheechetimes"] = null;
-		$state.go('authentication.login')
-	}
-
 
 	return {
 		login : Login,
-		logout: Logout
+		Firebase: Auth
 	}
 
 
