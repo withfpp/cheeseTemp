@@ -11,8 +11,10 @@
  * Handles login form submission and response
  */
 angular.module('triAngularAuthentication')
-.controller('LoginController', function ($scope, $state) {
-    // create blank user variable for login form
+.controller('LoginController', LoginController)
+
+function LoginController($scope, $state, Auth){
+   // create blank user variable for login form
     $scope.user = {
         email: 'info@oxygenna.com',
         password: 'demo'
@@ -38,6 +40,11 @@ angular.module('triAngularAuthentication')
 
     // controller to handle login check
     $scope.loginClick = function() {
-        $state.go('admin-panel.default.introduction');
+        Auth.login($scope.user.email, $scope.user.password)
+        // $state.go('admin-panel.default.introduction');
     };
-});
+}
+
+LoginController.$inject = [
+    '$scope', '$state', 'Auth'
+]

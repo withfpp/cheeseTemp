@@ -6,10 +6,13 @@ angular.module('triAngular', [
     // inject extra 3rd party angular modules
     'ui.router', 'pascalprecht.translate', 'LocalStorageModule', 'googlechart', 'chart.js', 'linkify', 'ui.calendar', 'angularMoment', 'textAngular', 'uiGmapgoogle-maps', 'hljs',
     // inject our own triangular modules
-    'triAngularIntroduction', 'triAngularUI', 'triAngularAuthentication', 'triAngularDashboards', 'triAngularEmail', 'triAngularMenuLevels', 'triAngularElements', 'triAngularForms', 'triAngularCharts', 'triAngularMaps', 'triAngularExtras', 'triAngularTodo'
+    'triAngularIntroduction', 'triAngularUI', 'triAngularAuthentication', 'triAngularDashboards', 'triAngularEmail', 'triAngularMenuLevels', 'triAngularElements', 'triAngularForms', 'triAngularCharts', 'triAngularMaps', 'triAngularExtras', 'triAngularTodo',
+        
+    // cheese
+        'cheeseService'
 ])
 .constant('APP', {
-    name: 'triangular',
+    name: 'Cheese',
     logo: 'assets/images/logo.png',
     version: '1.1.0',
     languages: [{
@@ -168,7 +171,7 @@ angular.module('triAngular', [
 
     // set prefix for local storage
     localStorageServiceProvider
-    .setPrefix('triAngular')
+    .setPrefix('cheese')
     .setStorageType('sessionStorage');
 })
 /**
