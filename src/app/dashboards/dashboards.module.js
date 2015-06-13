@@ -28,7 +28,13 @@ angular.module('triAngularDashboards', [])
     .state('admin-panel.default.dashboard-widgets', {
         url: '/dashboards/widgets',
         templateUrl: 'app/dashboards/widgets.tmpl.html',
-    });
+    })
+    .state('admin-panel.default.dashboard-teacher', {
+        url: '/dashboards/teacher',
+        controller: 'DashboardTeacherController',
+        templateUrl: 'app/dashboards/dashboard-teacher.tmpl.html'
+    })
+
 })
 .run(function(SideMenu) {
     SideMenu.addMenu({
@@ -52,6 +58,11 @@ angular.module('triAngularDashboards', [])
             name: 'MENU.DASHBOARDS.WIDGETS',
             state: 'admin-panel.default.dashboard-widgets',
             type: 'link',
-        }]
+        },{
+            name: 'MENU.DASHBOARDS.TEACHER',
+            state: 'admin-panel.default.dashboard-teacher',
+            type: 'link',
+        }
+        ]
     });
 });

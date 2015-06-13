@@ -5,13 +5,15 @@
             "GENERAL": "General",
             "ANALYTICS": "Analytics",
             "SERVER": "Server",
-            "WIDGETS": "Widgets"
+            "WIDGETS": "Widgets",
+            "TEACHER" : "Teacher"
         }
     },
     "DASHBOARDS": {
         "GENERAL": {
             "CONTACTS": "Contacts",
-            "CHAT": "Chat"
+            "CHAT": "Chat",
+            "KIDS": "My kids"
         },
         "ANALYTICS": {
             "COMMENTS": "Comments",
