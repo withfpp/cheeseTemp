@@ -1,0 +1,40 @@
+<div layout="row" flex layout-padding layout-align="center center">
+    <div flex="40" flex-lg="50" flex-md="70" flex-sm="100">
+        <md-card>
+            <md-toolbar>
+                <div layout="column" flex layout-padding layout-align="center center">
+                    <div><img src="assets/images/logo.png" alt="{{appName}}"></div>
+                    <h1 class="md-headline">
+                        {{'LOCK.TITLE' | translate}} {{user.name}}
+                    </h1>
+                </div>
+            </md-toolbar>
+
+            <md-content class="md-padding">
+                <div layout="column" flex layout-padding layout-align="center center">
+                    <p>{{'LOCK.LOGGED_OUT' | translate}}</p>
+                </div>
+                <form name="lock">
+                    <md-input-container>
+                        <label for="password">{{'LOCK.PASSWORD.LABEL' | translate}}</label>
+                        <input  id="password" label="password" name="password" type="password" ng-model="user.password" required/>
+                        <div ng-messages for="login.password.$error">
+                            <div ng-message when="required">
+                                {{'LOCK.PASSWORD.PLEASE_ENTER' | translate}}
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column">
+                        <md-button flex class="md-raised md-primary " ng-click="loginClick()" ng-disabled="lock.$invalid">{{'LOCK.LOGIN' | translate}}</md-button>
+                    </div>
+                    <div layout="column" layout-margin>
+                        <md-button class="md-primary " ng-click="logoutClick()">{{'LOCK.LOGOUT' | translate}}</md-button>
+                    </div>
+
+                </form>
+
+            </md-content>
+
+        </md-card>
+    </div>
+</div>
