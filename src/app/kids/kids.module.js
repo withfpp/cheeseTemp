@@ -17,13 +17,13 @@ angular.module('kidsModule', [])
     $stateProvider
     .state('admin-panel.default.kids', {
         url: '/kids',
-        templateUrl: 'app/kids/seed-page.tmpl.html',
-        controller: 'KidsController'
+        templateUrl: 'app/kids/kid-list.tmpl.html',
+        controller: 'KidsListController'
     })
     .state('admin-panel.default.kid-details', {
         url: '/kids/:kidId',
         templateUrl: 'app/kids/kid-details.tmpl.html',
-        controller: 'KidsController'
+        controller: 'KidsDetailsController'
     })
 
 

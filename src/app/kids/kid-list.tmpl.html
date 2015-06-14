@@ -1,0 +1,29 @@
+<div class="padding-20 padding-top-200 overlay-gradient-30" layout="row" layout-align="start center" style="background: url(assets/images/backgrounds/bg-2.jpg) no-repeat; background-size: cover;">
+    <div class="margin-right-20">
+        <img src="assets/images/avatars/avatar-5.png" alt="girl-avatar" class="make-round" width="100"/>
+    </div>
+    <div class="text-light">
+        <h3 class="font-weight-600 margin-bottom-0"><a href="#" class="text-light">{{teacherName}}</a> / {{kidsCount}} Kids
+        </h3>
+        <p class="font-weight-300 margin-top-0">Edit your name, avatar etc</p>
+     </div>
+</div>
+
+<div layout="row" class="profile" layout-wrap>
+    <div flex="100" flex-gt-md="100">
+
+        <md-list>
+            <md-subheader class="md-no-sticky">List of {{kidsCount}} children</md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="kid in kids" ng-click="goDetails(kid.name)">
+                <img ng-src="{{kid.avatar}}" class="md-avatar" alt="{{item.from.name}}" />
+                <div class="md-list-item-text">
+                    <h3>{{ kid.name }}</h3>
+                    <h4>{{ kid.desc }}</h4>
+                </div>
+            </md-list-item>
+            <md-divider ></md-divider>
+        </md-list>
+
+    </div>
+
+</div>

@@ -12,9 +12,9 @@
  */
 
 angular.module('kidsModule')
-	.controller('KidsController', KidsController);
+	.controller('KidsDetailsController', KidsDetailsController);
 
-function KidsController($scope, Kids, $state, CurrentUser) {
+function KidsDetailsController($scope, Kids, $state, CurrentUser) {
 		
 	$scope.kid = {}
 	$scope.kid.name = $state.params.kidId;
@@ -85,7 +85,7 @@ function KidsController($scope, Kids, $state, CurrentUser) {
 
 }
 
-KidsController.$inject = [
+KidsDetailsController.$inject = [
 	'$scope',
 	'Kids',
 	'$state',
