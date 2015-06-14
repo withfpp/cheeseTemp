@@ -16,13 +16,18 @@ angular.module('kidsModule', [])
     // Create a state for our seed test page
     $stateProvider
     .state('admin-panel.default.kids', {
-        // set the url of this page
         url: '/kids',
-        // set the html template to show on this page
         templateUrl: 'app/kids/seed-page.tmpl.html',
-        // set the controller to load for this page
         controller: 'KidsController'
-    });
+    })
+    .state('admin-panel.default.kid-details', {
+        url: '/kids/:kidId',
+        templateUrl: 'app/kids/kid-details.tmpl.html',
+        controller: 'KidsController'
+    })
+
+
+
 })
 .run(function(SideMenu) {
     // add a menu for the seed page we created in the $stateProvider above
