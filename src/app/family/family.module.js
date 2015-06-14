@@ -27,19 +27,18 @@ angular.module('familyModule', [])
     })
 
 
-
 })
 .run(function(SideMenu) {
     // add a menu for the seed page we created in the $stateProvider above
     SideMenu.addMenu({
         // give the menu a name to show (should be translatable and in the il8n folder json)
-        name: 'Family',
+        name: 'Create a Family',
         // point this menu to the state we created in the $stateProvider above
         state: 'admin-panel.default.family-create',
         // set the menu type to a link
         type: 'link',
         // set an icon for this menu
-        icon: 'icon-cake',
+        icon: 'icon-person-add',
         // set a proirity for this menu item, menu is sorted by priority
         priority: 1.1
     });
