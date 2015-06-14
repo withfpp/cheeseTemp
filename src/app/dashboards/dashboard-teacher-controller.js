@@ -9,10 +9,11 @@
  *
  */
 angular.module('triAngularDashboards').
-controller('DashboardTeacherController', function ($scope, $timeout, $mdToast, CurrentUser) {
+controller('DashboardTeacherController', function ($scope, $timeout, $mdToast, CurrentUser, $state) {
    
     $scope.kids = [];
     $scope.init = init;
+    $scope.goDetails = goDetails;
 
     function init(){
         CurrentUser
@@ -20,6 +21,10 @@ controller('DashboardTeacherController', function ($scope, $timeout, $mdToast, C
             .then(function(data){
                 $scope.kids = data.kids
             })
+    }
+
+    function goDetails(name){
+        $state.go('admin-panel.default.kid-details', {kidId: name})
     }
 
 

@@ -63,7 +63,7 @@
         <div layout="row" layout-sm="column" layout-margin>
              <widget flex title="{{'DASHBOARDS.GENERAL.KIDS' | translate}}" contacts-widget>
                 <md-list>
-                    <md-list-item ng-repeat="kid in kids">
+                    <md-list-item ng-repeat="kid in kids" ng-click="goDetails(kid.name)">
                         <img class="md-avatar" ng-src="{{kid.avatar}}" alt="{{kid.name}}">
                         <p>{{kid.name}}</p>
                         <md-icon md-font-icon="icon-chat" class="md-primary"></md-icon>
