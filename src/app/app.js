@@ -9,7 +9,7 @@ angular.module('triAngular', [
     'triAngularIntroduction', 'triAngularUI', 'triAngularAuthentication', 'triAngularDashboards', 'triAngularEmail', 'triAngularMenuLevels', 'triAngularElements', 'triAngularForms', 'triAngularCharts', 'triAngularMaps', 'triAngularExtras', 'triAngularTodo',
         
     // cheese
-        'cheeseService', 'kidsModule'
+        'cheeseService', 'kidsModule', 'familyModule'
 
 ])
 .constant('APP', {
