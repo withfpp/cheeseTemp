@@ -2,9 +2,8 @@ angular.module('cheeseService')
 	.service('Auth', Auth);
 
 function Auth($q, $state){
-
 	var Auth = new Firebase("https://cheechetimes.firebaseio.com/");
-
+	var _$q = $q;
 
 	/**
 	 * [Login description]
@@ -13,19 +12,19 @@ function Auth($q, $state){
 	 * @param {[string]} password
 	 */
 	function Login(email, password){
-		var deferred = $q.defer();
+		var deferred = _$q.defer();
 		Auth.authWithPassword({
-      email: email,
-      password: password
-    }, function(error, authData)  {
-      if (error) {
-        console.log("Login Failed!", error);
-      } else {
-        console.log("Authenticated successfully with payload:", authData);
-        deferred.reesolve(authData)
-        //redirect with login Id as a param
-      }
-    })
+		  email: email,
+		  password: password
+		}, function(error, authData)  {
+			if (error) {
+				console.log("Login Failed!", error);
+			} else {
+				console.log("Authenticated successfully with payload:", authData);
+				deferred.resolve(authData)
+				//redirect with login Id as a param
+			}
+		})
 		return deferred.promise;
 	}
 

@@ -32,7 +32,8 @@ function Family($q, Auth, CurrentUser){
 		var kidId = kidRef.key();
 
 		// inject kid key into family
-		return familyRef.child('kids').push(kidId);	
+		familyRef.child('kids').push(kidId);	
+		return kid;
 	}
 
 	function hashRemover(obj){

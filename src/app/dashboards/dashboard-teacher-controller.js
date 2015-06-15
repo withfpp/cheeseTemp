@@ -14,9 +14,10 @@ controller('DashboardTeacherController', function ($scope, $timeout, $mdToast, C
     $scope.kids = [];
     $scope.init = init;
     $scope.goDetails = goDetails;
+    var _CurrentUser = CurrentUser;
 
     function init(){
-        CurrentUser
+        _CurrentUser
             .getKids()
             .then(function(data){
                 $scope.kids = data.kids

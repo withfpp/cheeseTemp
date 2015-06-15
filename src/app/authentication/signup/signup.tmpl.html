@@ -12,15 +12,7 @@
 
             <md-content class="md-padding">
                 <form name="signup">
-                    <md-input-container>
-                        <label for="name">{{'SIGNUP.NAME.LABEL' | translate}}</label>
-                        <input id="name" label="name" name="name" type="text" ng-model="user.name" required/>
-                        <div ng-messages="signup.name.$error">
-                            <div ng-message when="required">
-                                {{'SIGNUP.NAME.PLEASE_ENTER' | translate}}
-                            </div>
-                        </div>
-                    </md-input-container>
+
                     <md-input-container>
                         <label for="email">{{'SIGNUP.EMAIL.LABEL' | translate}}</label>
                         <input id="email" label="email" name="email" type="email" ng-model="user.email" required/>

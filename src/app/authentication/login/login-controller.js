@@ -16,8 +16,8 @@ angular.module('triAngularAuthentication')
 function LoginController($scope, $state, Auth){
    // create blank user variable for login form
     $scope.user = {
-        email: 'info@oxygenna.com',
-        password: 'demo'
+        email: 'wenbolovesnz@gmail.com',
+        password: '111111'
     };
 
     $scope.socialLogins = [{
