@@ -11,15 +11,10 @@ function CurrentUser($q, $state, Auth){
 		CurrentUser.email = authData.password.email
 	}
 
-	setId();
 
-
-	// get user info
-	function setId(){
-		Firebase.onAuth(function() {
-			CurrentUser.userId = Firebase.getAuth() ? Firebase.getAuth().uid : false;
-		});
-	}
+	Firebase.onAuth(function() {
+		CurrentUser.userId = Firebase.getAuth() ? Firebase.getAuth().uid : false;
+	});
 
 
 	// get kid names belong to the teacher

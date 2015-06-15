@@ -2,7 +2,7 @@ angular.module('cheeseService')
 	.service('Auth', Auth);
 
 function Auth($q, $state){
-	var Auth = new Firebase("https://cheechetimes.firebaseio.com/");
+	var Fb = new Firebase("https://cheechetimes.firebaseio.com/");
 	var _$q = $q;
 
 	/**
@@ -13,7 +13,7 @@ function Auth($q, $state){
 	 */
 	function Login(email, password){
 		var deferred = _$q.defer();
-		Auth.authWithPassword({
+		Fb.authWithPassword({
 		  email: email,
 		  password: password
 		}, function(error, authData)  {
@@ -22,22 +22,17 @@ function Auth($q, $state){
 			} else {
 				console.log("Authenticated successfully with payload:", authData);
 				deferred.resolve(authData)
-				//redirect with login Id as a param
 			}
 		})
 		return deferred.promise;
 	}
 
-
 	return {
 		login : Login,
-		Firebase: Auth
+		Firebase: Fb
 	}
-
-
-
 }	
-Auth
+
 Auth.$inject = [
 	'$q', '$state'
 ]

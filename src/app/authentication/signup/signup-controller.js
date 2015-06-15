@@ -12,25 +12,21 @@
  */
 angular.module('triAngularAuthentication')
 .controller('SignupController', 
-    function ($scope, $state, $mdToast, $http, $filter, API_CONFIG, Auth, $stateParams) {
+    function ($scope, $state, $mdToast, $http, $filter, API_CONFIG, Auth, $stateParams, $location) {
     // create blank user variable for login form
     $scope.user = {
         password:'',
         confirm:'',
         email: ''
     };
+
+    $scope.user.email = $location.search().email;
+
     $scope.params = $stateParams;
     $scope.error = '';
     var Firebase = Auth.Firebase;
 
     $scope.signupClick = signUp;
-
-    init();
-
-
-    function init(){
-        $scope.user.email = $scope.params.email;
-    }
 
     function signUp(){
         if($scope.user.password === $scope.user.confirm){
@@ -43,7 +39,6 @@ angular.module('triAngularAuthentication')
                     console.log(error)
                     $scope.error = 'Sorry, create user failed, please try again later.'
                 } else {
-            console.log(Firebase)
 
                     Firebase.child('invitations').child($scope.params.invitation)
                         .once('value',function(snapshot){
@@ -53,7 +48,6 @@ angular.module('triAngularAuthentication')
                             familyKey: invitation.familyKey,
                             userOrgId: invitation.userOrgId
                         };
-            console.log(Firebase)
 
                         Firebase.child('users').child(userData.uid).set(newUser, function(){
                             Firebase.authWithPassword({
@@ -61,8 +55,8 @@ angular.module('triAngularAuthentication')
                                 password: $scope.user.password
                             }, function(error, authData){
                                 if (error) {
+                                    console.log(error)
                                 } else {
-
                                     //temporary, send parents to general dashboard
                                     alert('success')
                                     $state.go('admin-panel.default.dashboard-general', {userId: authData.auth.uid});
@@ -77,8 +71,6 @@ angular.module('triAngularAuthentication')
             $scope.error = 'Password and Confirm password must be the same.';
         }
     }
-
-
 
 
     // use later when we replace backend

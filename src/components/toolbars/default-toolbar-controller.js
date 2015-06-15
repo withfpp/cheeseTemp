@@ -60,6 +60,7 @@ angular.module('triAngular')
     };
 
     $scope.logout = function() {
+        CurrentUser.logout();
         $state.go('authentication.login');
     };
 

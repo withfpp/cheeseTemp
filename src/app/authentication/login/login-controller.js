@@ -41,7 +41,9 @@ function LoginController($scope, $state, Auth){
     // controller to handle login check
     $scope.loginClick = function() {
         Auth.login($scope.user.email, $scope.user.password)
-        $state.go('admin-panel.default.dashboard-teacher');
+            .then(function(){
+                $state.go('admin-panel.default.dashboard-teacher');
+            })
     };
 }
 
